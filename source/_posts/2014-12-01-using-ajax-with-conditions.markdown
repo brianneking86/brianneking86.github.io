@@ -17,3 +17,17 @@ On the board show page each div would be a list that belonged to that board and 
 -> ![alt text](https://raw.githubusercontent.com/brianneking86/brianneking86.github.io/source/source/images/board_show.png "Board Show Page") <-
 
 This presented a problem if I wanted to be able to add a list from either page. On the board index page, a list would get appended as a line item but on the board show page it would get appended as a whole div with the potential for lines items. I had checked out Trello to make sure I wasn't crazy and that it was possible but it was set up in a way that would have dealt with the issue so of course that meant that my best bet on getting an answer was poor Steven Nunez.
+
+Of course I grabbed him on his way out the door to freedom and he kindly (if not somewhat begrudgingly) offered to help out. I poorly explained the situation to him (probably about as well as above) and thankfully he understood and explained that the solution was actually not as difficult as I thought. After persisting the new list to the database, the next step is the create.js.erb file where I just had to create a condition statement that would check the page for specific css elements. To break that down a little bit more, check the page for either .board-wrapper or something specific to the board index page, if it finds that element then render one html.erb template otherwise render a different template. Doesn't sound too hard, right?! 
+
+This time amazingly it wasn't. My initial create.js.erb file looked like this.
+
+-> ![alt text](https://raw.githubusercontent.com/brianneking86/brianneking86.github.io/source/source/images/original.png "Board Index Page") <-
+
+Once I added my conditional, it looks like this.
+
+-> ![alt text](https://raw.githubusercontent.com/brianneking86/brianneking86.github.io/source/source/images/updated.png "Board Index Page") <-
+
+Adding five lines of code and one additional partial that I called _board_list.html.erb I had my answer. There is so much more to learn of the wonders of javascript/ajax and while I still lovingly refer to the language as "code vomit on the screen", I'm actually totally motivated to learn more :)
+
+-> ![alt text](https://raw.githubusercontent.com/brianneking86/brianneking86.github.io/source/source/images/200.gif "Board Index Page") <-
